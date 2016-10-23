@@ -30,6 +30,7 @@ namespace TodoApi
 		{
 			// Add framework services.
 			services.AddMvc();
+			services.AddSwaggerGen();
 
 			services.AddSingleton<ITodoRepository, TodoRepository>();
 		}
@@ -41,6 +42,8 @@ namespace TodoApi
 			loggerFactory.AddDebug();
 
 			app.UseMvc();
+			app.UseSwagger();
+			app.UseSwaggerUi();
 		}
 	}
 }
